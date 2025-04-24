@@ -1,0 +1,14 @@
+# render.yaml
+services:
+  - type: web
+    name: fullstack-chat-app
+    env: node
+    build:
+      command: "npm install && npm run build"
+      publish: "build/"
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 3000
+    healthCheckPath: /
